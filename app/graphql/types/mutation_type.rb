@@ -8,15 +8,18 @@ module Types
     #   "Hello World"
     # end
                           # model
-    field :create_author, Types::AuthorType, null: false, description: "Create an author" do
-      argument :first_name,  String,  required: false
-      argument :last_name,   String,  required: false
-      argument :birth_year,  Int,     required: false
-      argument :alive,       Boolean, required: false
-    end
-    def create_author(first_name:, last_name:, birth_year:, alive:)
-      Author.create(first_name: first_name, last_name: last_name,
-                    birth_year: birth_year, alive: alive)
-    end
+    # field :create_author, Types::AuthorType, null: false, description: "Create an author" do
+    #   argument :first_name,  String,  required: false
+    #   argument :last_name,   String,  required: false
+    #   argument :birth_year,  Int,     required: false
+    #   argument :alive,       Boolean, required: false
+    # end
+    # def create_author(first_name:, last_name:, birth_year:, alive:)
+    #   Author.create(first_name: first_name, last_name: last_name,
+    #                 birth_year: birth_year, alive: alive)
+    # end
+
+    # função autor        tipo de retorno    arquivo com a função create_author
+    field :create_author, Types::AuthorType, mutation: Mutations::CreateAuthor, null: false, description: "Create an author"
   end
 end
