@@ -20,6 +20,8 @@ module Types
     # end
 
     # função autor        tipo de retorno    arquivo com a função create_author
-    field :create_author, Types::AuthorType, mutation: Mutations::CreateAuthor, null: false, description: "Create an author"
+    
+    #field :create_author, Types::AuthorType, mutation: Mutations::CreateAuthor, null: true, description: "Create an author"
+    field :create_author, Types::AuthorType, mutation: Mutations::CreateAuthor, null: true, description: "Create an author"
   end
 end
