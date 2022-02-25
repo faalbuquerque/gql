@@ -20,9 +20,15 @@ module Types
       argument :first_name, String, required: true
     end
 
+    field :authors, [Types::AuthorType], null: true, description: "Search all authors"
+
     #chamo
     def author(first_name:)
       Author.where(first_name: first_name)&.first
+    end
+
+    def authors
+      Author.all
     end
   end
 end
